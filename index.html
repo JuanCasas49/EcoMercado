@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EcoMercado: feria digital de productores locales. Simulador sin pagos.">
+  <title>EcoMercado | Feria digital de productores locales</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#catalogo">Saltar al catálogo</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio" aria-label="EcoMercado, ir al inicio">
+        <span class="marca__icono" aria-hidden="true"></span> EcoMercado
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#canasta">Canasta <span id="contador-canasta" class="insignia" aria-label="productos en la canasta">0</span></a></li>
+          <li><a href="#productor">Productor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="bienvenida" aria-labelledby="titulo-inicio">
+      <div class="contenedor bienvenida__fila">
+        <div class="bienvenida__texto">
+          <p class="etiqueta">Feria digital &middot; 100 % local</p>
+          <h1 id="titulo-inicio">Lo mejor del campo, <span class="resalte">directo a tu canasta</span></h1>
+          <p class="bienvenida__lead">
+            Encuentra productos frescos de pequeños productores, compara precios,
+            arma tu canasta y revisa si tu compra cabe en tu presupuesto.
+          </p>
+          <ul class="chips" aria-label="Características de la feria">
+            <li>6 productos</li><li>10 % de descuento desde $60.000</li><li>Sin pagos reales</li>
+          </ul>
+          <div class="bienvenida__acciones">
+            <a class="boton boton--principal" href="#catalogo">Ver productos</a>
+            <a class="boton boton--claro" href="#canasta">Ir a mi canasta</a>
+          </div>
+          <p class="aviso">Esto es un simulador: no recibe dinero ni envía datos del formulario.</p>
+        </div>
+        <div class="collage" aria-hidden="true">
+          <img class="collage__img collage__img--a" src="imagenes/tomates.svg" alt="" width="400" height="300">
+          <img class="collage__img collage__img--b" src="imagenes/miel.svg" alt="" width="400" height="300">
+          <img class="collage__img collage__img--c" src="imagenes/cafe.svg" alt="" width="400" height="300">
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="seccion" aria-labelledby="titulo-catalogo">
+      <div class="contenedor">
+        <h2 id="titulo-catalogo">Catálogo</h2>
+
+        <form class="controles" id="controles" role="search" aria-label="Buscar y filtrar productos">
+          <div class="campo">
+            <label for="buscador">Buscar producto</label>
+            <input type="search" id="buscador" placeholder="Ej.: miel, queso…" autocomplete="off">
+          </div>
+          <div class="campo">
+            <label for="filtro-categoria">Categoría</label>
+            <select id="filtro-categoria"></select>
+          </div>
+          <div class="campo">
+            <label for="orden">Ordenar por</label>
+            <select id="orden">
+              <option value="nombre-asc">Nombre (A-Z)</option>
+              <option value="nombre-desc">Nombre (Z-A)</option>
+              <option value="precio-asc">Precio (menor a mayor)</option>
+              <option value="precio-desc">Precio (mayor a menor)</option>
+            </select>
+          </div>
+        </form>
+
+        <p id="resumen-catalogo" class="resumen" role="status" aria-live="polite"></p>
+        <div id="lista-productos" class="rejilla" aria-label="Lista de productos"></div>
+        <p id="sin-resultados" class="vacio" role="status" hidden>
+          No encontramos productos con esa búsqueda. Prueba con otra palabra o cambia la categoría.
+        </p>
+      </div>
+    </section>
+
+    <section id="canasta" class="seccion seccion--alterna" aria-labelledby="titulo-canasta">
+      <div class="contenedor">
+        <h2 id="titulo-canasta" tabindex="-1">Tu canasta</h2>
+        <div class="canasta">
+          <div class="canasta__lista">
+            <p id="canasta-vacia" class="vacio">Tu canasta está vacía. Agrega productos desde el catálogo.</p>
+            <ul id="lista-canasta" class="lineas" aria-label="Productos en la canasta"></ul>
+            <button type="button" class="boton boton--secundario" id="vaciar" data-accion="vaciar" hidden>Vaciar canasta</button>
+          </div>
+
+          <aside class="resumen-compra" aria-labelledby="titulo-resumen">
+            <h3 id="titulo-resumen">Resumen y presupuesto</h3>
+            <dl class="totales">
+              <div><dt>Subtotal</dt><dd id="subtotal">$0</dd></div>
+              <div><dt>Descuento (10 % desde $60.000)</dt><dd id="descuento">$0</dd></div>
+              <div class="totales__total"><dt>Total</dt><dd id="total">$0</dd></div>
+            </dl>
+
+            <div class="campo">
+              <label for="presupuesto">Mi presupuesto (COP)</label>
+              <input type="number" id="presupuesto" min="0" step="500" inputmode="numeric" aria-describedby="estado-presupuesto">
+            </div>
+            <div class="barra" aria-hidden="true"><div id="barra-presupuesto" class="barra__relleno"></div></div>
+            <p id="estado-presupuesto" class="estado" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="productor" class="seccion" aria-labelledby="titulo-productor">
+      <div class="contenedor contenedor--estrecho">
+        <h2 id="titulo-productor">¿Eres productor? Únete a la feria</h2>
+        <p>Cuéntanos qué produces. <strong>Simulación:</strong> los datos no se envían a ningún lugar.</p>
+
+        <form id="form-productor" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="60" aria-describedby="error-nombre" required>
+            <p class="error" id="error-nombre"></p>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo" required>
+            <p class="error" id="error-correo"></p>
+          </div>
+          <div class="campo">
+            <label for="descripcion">Describe tu producto</label>
+            <textarea id="descripcion" name="descripcion" rows="4" maxlength="300" aria-describedby="ayuda-descripcion error-descripcion" required></textarea>
+            <p class="ayuda" id="ayuda-descripcion">Entre 20 y 300 caracteres. <span id="contador-descripcion">0/300</span></p>
+            <p class="error" id="error-descripcion"></p>
+          </div>
+          <div class="campo campo--check">
+            <input type="checkbox" id="consentimiento" name="consentimiento" aria-describedby="error-consentimiento" required>
+            <label for="consentimiento">Acepto que la asociación me contacte sobre mi participación en la feria.</label>
+            <p class="error" id="error-consentimiento"></p>
+          </div>
+          <button type="submit" class="boton boton--principal">Enviar solicitud</button>
+          <p id="mensaje-formulario" class="estado" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>EcoMercado &middot; Prototipo académico de feria digital. No procesa pagos.</p>
+      <p>Imágenes: ilustraciones vectoriales (SVG) originales creadas para este proyecto; ver <code>imagenes/</code>.</p>
+    </div>
+  </footer>
+
+  <p id="anuncio" class="solo-lectura" role="status" aria-live="polite"></p>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+<title id="t">Porción de queso campesino sobre una tabla de madera</title>
+<defs><linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ece6ff"/><stop offset="1" stop-color="#d6caff"/></linearGradient></defs><rect width="400" height="300" fill="url(#fondo)"/><circle cx="48" cy="52" r="70" fill="#fff" opacity=".28"/><circle cx="372" cy="262" r="86" fill="#fff" opacity=".22"/>
+<rect x="40" y="200" width="320" height="64" rx="14" fill="#c08a4a"/>
+<rect x="40" y="200" width="320" height="14" rx="7" fill="#a8733a"/>
+<path d="M90 200l120-92 100 40v52z" fill="#f6d365"/>
+<path d="M90 200l220 0v-0z" fill="#f6d365"/>
+<path d="M90 200h220v-0l0 0z" fill="#f6d365"/>
+<path d="M90 200l120-92 100 40v52z" fill="#fbd96b"/>
+<path d="M90 200h220v36H90z" fill="#f0bd3d"/>
+<path d="M90 200l0 36" stroke="#d9a52c" stroke-width="2"/>
+<path d="M210 108l100 40" stroke="#fff" stroke-width="3" opacity=".35"/>
+<g fill="#e7a925">
+<ellipse cx="170" cy="172" rx="12" ry="9"/><ellipse cx="228" cy="150" rx="9" ry="7"/>
+<ellipse cx="260" cy="182" rx="14" ry="10"/><ellipse cx="130" cy="216" rx="8" ry="7"/>
+<ellipse cx="210" cy="218" rx="12" ry="9"/><ellipse cx="282" cy="218" rx="8" ry="6"/>
+</g>
+<g fill="#2d7a2f"><circle cx="330" cy="130" r="6"/><circle cx="346" cy="144" r="5"/><circle cx="318" cy="146" r="5"/></g>
+</svg>

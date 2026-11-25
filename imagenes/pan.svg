@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+<title id="t">Pan de masa madre recién horneado con cortes decorativos</title>
+<defs><linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9d9"/><stop offset="1" stop-color="#ffd0b0"/></linearGradient></defs><rect width="400" height="300" fill="url(#fondo)"/><circle cx="48" cy="52" r="70" fill="#fff" opacity=".28"/><circle cx="372" cy="262" r="86" fill="#fff" opacity=".22"/>
+<path d="M0 230h400v70H0z" fill="#e4c9a3"/>
+<ellipse cx="200" cy="244" rx="150" ry="14" fill="#000" opacity=".1"/>
+<path d="M60 190c0-60 60-100 140-100s140 40 140 100c0 28-14 48-40 52H100c-26-4-40-24-40-52z" fill="#c9802f"/>
+<path d="M76 186c4-50 56-84 124-84s120 34 124 84c-2 22-14 38-34 42H110c-20-4-32-20-34-42z" fill="#e0a04c"/>
+<g stroke="#f7dba4" stroke-width="10" stroke-linecap="round" fill="none">
+<path d="M130 150c16-20 30-30 46-36"/><path d="M178 160c16-22 32-34 50-40"/><path d="M228 162c16-18 30-28 46-32"/>
+</g>
+<path d="M95 200c30 16 180 16 210 0" stroke="#a9651f" stroke-width="4" fill="none" opacity=".5"/>
+<g fill="#e8c46a"><path d="M330 70l10 18 20 2-14 14 4 20-18-10-18 10 4-20-14-14 20-2z" opacity=".7"/></g>
+</svg>
